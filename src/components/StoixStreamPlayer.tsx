@@ -88,7 +88,7 @@ const StoixStreamPlayer: React.FC<StoixStreamPlayerProps> = ({ src, width }) => 
         onPlayToggle={controls.togglePlay}
         onMuteToggle={controls.toggleMute}
         onFullscreenToggle={controls.toggleFullscreen}
-      />
+      />isFullscreen
     </div>
   );
 };
