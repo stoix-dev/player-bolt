@@ -6,22 +6,17 @@ import terser from "@rollup/plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 
-// Use `createRequire` to load `package.json` in an ES module context
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-const packageJson = require("./package.json");
-
 export default [
   {
-    input: "src/main.tsx",
+    input: "src/index.ts",
     output: [
       {
-        file: packageJson.main,
+        file: "dist/index.js",
         format: "cjs",
         sourcemap: true,
       },
       {
-        file: packageJson.module,
+        file: "dist/index.esm.js",
         format: "esm",
         sourcemap: true,
       },
@@ -32,16 +27,25 @@ export default [
       commonjs(),
       typescript({
         tsconfig: "./tsconfig.json",
-        allowImportingTsExtensions: true,
+        exclude: ["**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx"],
+      }),
+      postcss({
+        config: {
+          path: "./postcss.config.js",
+        },
+        extensions: [".css"],
+        minimize: true,
+        inject: {
+          insertAt: "top",
+        },
       }),
       terser(),
-      postcss(),
     ],
     external: ["react", "react-dom"],
   },
   {
-    input: "src/main.tsx",
-    output: [{ file: packageJson.types }],
+    input: "src/index.ts",
+    output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
     external: [/\.css$/],
   },

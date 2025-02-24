@@ -1,53 +1,77 @@
 {
-  "name": "stoix-stream-player",
-  "private": true,
-  "version": "0.0.0",
-  "main": "dist/stoix-stream-player.cjs.js",
-  "module": "dist/stoix-stream-player.esm.js",
+  "name": "stoix-player",
+  "version": "2.3.0",
+  "private": false,
+  "description": "A customizable React video player component with advanced features",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "rollup": "rollup -c --bundleConfigAsCjs",
+  "style": "dist/index.css",
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "rollup -c",
     "lint": "eslint .",
-    "rollup": "rollup -c",
     "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "@videojs/http-streaming": "^3.10.0",
     "lucide-react": "^0.344.0",
     "react-colorful": "^5.6.1",
-    "react-dom": "^19.0.0",
     "tslib": "^2.8.1",
     "video.js": "^8.10.0",
     "videojs-contrib-quality-levels": "^4.0.0",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.1",
-    "@rollup/plugin-commonjs": "^26.0.3",
-    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@eslint/js": "^8.56.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
     "@types/video.js": "^7.3.56",
-    "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.18",
-    "eslint": "^9.9.1",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.11",
-    "globals": "^15.9.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "globals": "^13.24.0",
     "postcss": "^8.4.35",
-    "react": "^19.0.0",
-    "rollup": "^4.34.8",
-    "rollup-plugin-dts": "^6.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.9.6",
+    "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.3.0",
-    "vite": "^5.4.2"
-  }
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^0.0.1-alpha.0"
+  },
+  "keywords": [
+    "react",
+    "video",
+    "player",
+    "hls",
+    "streaming",
+    "customizable"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/stoix-player"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/stoix-player/issues"
+  },
+  "homepage": "https://github.com/yourusername/stoix-player#readme"
 }

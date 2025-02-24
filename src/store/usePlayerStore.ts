@@ -1,22 +1,22 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 
-interface PlayerState {
-  progressColor: string
-  overlayBackgroundColor: string
-  showProgressBar: boolean
-  autoHideControls: boolean
-  showFakeProgress: boolean
-  autoPlay: boolean
-  overlayTopText: string
-  overlayBottomText: string
-  setProgressColor: (color: string) => void
-  setOverlayBackgroundColor: (color: string) => void
-  setShowProgressBar: (show: boolean) => void
-  setAutoHideControls: (autoHide: boolean) => void
-  setShowFakeProgress: (show: boolean) => void
-  setAutoPlay: (autoPlay: boolean) => void
-  setOverlayTopText: (text: string) => void
-  setOverlayBottomText: (text: string) => void
+export interface PlayerState {
+  progressColor: string;
+  overlayBackgroundColor: string;
+  showProgressBar: boolean;
+  autoHideControls: boolean;
+  showFakeProgress: boolean;
+  autoPlay: boolean;
+  overlayTopText: string;
+  overlayBottomText: string;
+  setProgressColor: (color: string) => void;
+  setOverlayBackgroundColor: (color: string) => void;
+  setShowProgressBar: (show: boolean) => void;
+  setAutoHideControls: (autoHide: boolean) => void;
+  setShowFakeProgress: (show: boolean) => void;
+  setAutoPlay: (autoPlay: boolean) => void;
+  setOverlayTopText: (text: string) => void;
+  setOverlayBottomText: (text: string) => void;
 }
 
 export const usePlayerStore = create<PlayerState>((set) => ({
@@ -36,4 +36,4 @@ export const usePlayerStore = create<PlayerState>((set) => ({
   setAutoPlay: (autoPlay) => set({ autoPlay: autoPlay }),
   setOverlayTopText: (text) => set({ overlayTopText: text.slice(0, 50) }),
   setOverlayBottomText: (text) => set({ overlayBottomText: text.slice(0, 50) })
-}))
+}));
